@@ -1,24 +1,42 @@
-$background-color: #0f0f0f;
-$text-color: white;
-$disabled-text-color: rgb(189, 189, 189);
+:root {
+  --background-color: white;
+  --text-color: black;
+  --disabled-text-color: #9a9a9a;
+  --interactive-background-color: #eaeaea;
+  --interactive-border-color: #a3a3a3;
+  --interactive-focus-border-color: #333333;
+  --hover-background: #e0e0e0;
+  --active-button-background-color: #b9b9b9;
+  --link-color: #3838d2;
+}
 
-$interactive-background-color: rgb(31, 31, 31);
-$interactive-border-color: #333333;
-
-$hover-background: rgb(56, 56, 56);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0f0f0f;
+    --text-color: white;
+    --disabled-text-color: rgb(189, 189, 189);
+    --interactive-background-color: rgb(31, 31, 31);
+    --interactive-border-color: #333333;
+    --interactive-focus-border-color: #a3a3a3;
+    --hover-background: rgb(56, 56, 56);
+    --active-button-background-color: rgb(24, 24, 24);
+    --link-color: orange;
+  }
+}
 
 html,
 body {
-  background-color: $background-color;
-  color: $text-color;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: "Roboto", sans-serif;
 }
 
 a {
-  color: orange;
+  color: var(--link-color);
   text-decoration: none;
 
   &:hover {
+    cursor: pointer;
     text-decoration: underline;
   }
 }
@@ -27,27 +45,27 @@ button,
 select {
   &:hover {
     cursor: pointer;
-    background-color: $hover-background;
+    background-color: var(--hover-background);
   }
 }
 
 button,
 input,
 select {
-  background-color: $interactive-background-color;
-  color: $text-color;
+  background-color: var(--interactive-background-color);
+  color: var(--text-color);
   padding: 5px;
-  border: 1px solid $interactive-border-color;
+  border: 1px solid var(--interactive-border-color);
   border-radius: 5px;
 
   &:focus {
     outline: none;
-    border: 1px solid #a3a3a3;
+    border: 1px solid var(--interactive-focus-border-color);
   }
 
   &:disabled {
     cursor: not-allowed;
-    color: $disabled-text-color;
+    color: var(--disabled-text-color);
   }
 }
 
@@ -55,7 +73,7 @@ button {
   padding: 5px 10px 5px 10px;
 
   &:active:not(:disabled) {
-    background-color: rgb(24, 24, 24);
+    background-color: var(--active-button-background-color);
   }
 }
 
@@ -65,9 +83,9 @@ input[type=checkbox] {
   vertical-align: middle;
   appearance: none;
 
-  &:hover:not(:disabled){
+  &:hover:not(:disabled) {
     cursor: pointer;
-    background-color: $hover-background;
+    background-color: var(--hover-background);
   }
 
   &:checked::before {
@@ -81,6 +99,7 @@ input[type=checkbox] {
 .text-center {
   text-align: center;
 }
+
 .hidden {
   visibility: hidden;
 }
