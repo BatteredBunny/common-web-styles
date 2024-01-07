@@ -1,13 +1,13 @@
 {
   "name": "common-web-styles",
-  "version": "1.3.2",
-  "repository": "https://github.com/ayes-web/common-web-styles",
+  "version": "1.3.3",
+  "repository": "https://github.com/BatteredBunny/common-web-styles",
   "scripts": {
     "build": "sass common.scss dist/common.css",
     "postinstall": "npm run build"
   },
-  "author": "ayes-web <ayes2022@protonmail.com>",
+  "author": "BatteredBunny <ayes2022@protonmail.com>",
   "dependencies": {
-    "sass": "^1.69.5"
+    "sass": "^1.69.7"
   }
 }
