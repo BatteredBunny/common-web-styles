@@ -1,13 +1,10 @@
 {
   "name": "common-web-styles",
-  "version": "1.3.3",
+  "version": "1.5.0",
   "repository": "https://github.com/BatteredBunny/common-web-styles",
   "scripts": {
-    "build": "sass common.scss dist/common.css",
+    "build": "cp common.css dist/common.css",
     "postinstall": "npm run build"
   },
-  "author": "BatteredBunny <ayes2022@protonmail.com>",
-  "dependencies": {
-    "sass": "^1.69.7"
-  }
+  "author": "BatteredBunny <ayes2022@protonmail.com>"
 }

@@ -1,29 +1,16 @@
 :root {
-  --background-color: white;
-  --text-color: black;
-  --secondary-text-color: rgb(63, 63, 63);
-  --disabled-text-color: #9a9a9a;
-  --interactive-background-color: #eaeaea;
-  --interactive-border-color: #a3a3a3;
-  --interactive-focus-border-color: #333333;
-  --hover-background: #e0e0e0;
-  --active-button-background-color: #b9b9b9;
-  --link-color: #3838d2;
-}
+  color-scheme: light dark;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #0f0f0f;
-    --text-color: white;
-    --secondary-text-color: rgb(192, 192, 192);
-    --disabled-text-color: rgb(189, 189, 189);
-    --interactive-background-color: rgb(31, 31, 31);
-    --interactive-border-color: #333333;
-    --interactive-focus-border-color: #a3a3a3;
-    --hover-background: rgb(56, 56, 56);
-    --active-button-background-color: rgb(24, 24, 24);
-    --link-color: orange;
-  }
+  --background-color: light-dark(white, #0f0f0f);
+  --text-color: light-dark(black, white);
+  --secondary-text-color: light-dark(rgb(63, 63, 63), rgb(192, 192, 192));
+  --disabled-text-color: light-dark(#9a9a9a, rgb(189, 189, 189));
+  --interactive-background-color: light-dark(#eaeaea, rgb(31, 31, 31));
+  --interactive-border-color: light-dark(#a3a3a3, #333333);
+  --interactive-focus-border-color: light-dark(#333333, #a3a3a3);
+  --hover-background: light-dark(#e0e0e0, rgb(56, 56, 56));
+  --active-button-background-color: light-dark(#b9b9b9, rgb(24, 24, 24));
+  --link-color: light-dark(#3838d2, orange);
 }
 
 html,
@@ -43,12 +30,10 @@ a {
   }
 }
 
-button,
-select {
-  &:hover {
-    cursor: pointer;
-    background-color: var(--hover-background);
-  }
+button:hover,
+select:hover {
+  cursor: pointer;
+  background-color: var(--hover-background);
 }
 
 button,
@@ -79,7 +64,7 @@ button {
   }
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 15px;
   height: 15px;
   vertical-align: middle;
